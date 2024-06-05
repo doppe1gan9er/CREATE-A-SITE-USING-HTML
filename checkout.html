@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оформление заказа</title>
+<link rel="icon" type="image/png" sizes="32x32" href="mini-image.jpg">
+<style>
+    body {
+            font-size: 18px;
+        }
+    form {
+        max-width: 400px; /* максимальную ширину формы в 400 пикселей */
+        margin: 0 auto; /* автоматические отступы слева и справа для формы, 
+        чтобы центрировать ее горизонтально на странице */
+        padding: 20px;  /* внутренний отступ для содержимого внутри формы */
+        border: 1px solid #ccc; /* Задает рамку шириной 1 пиксель */
+        border-radius: 5px; /* Определяет радиус скругления углов формы */
+        text-align: center; /* Выравнивает текст и другой встроенный контент внутри формы по центру */
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea {  /*Этот селектор применяется к различным типам элементов формы: 
+        текстовое поле, поле электронной почты, телефонное поле и элемент textarea*/
+        width: 100%; /* Устанавливает ширину указанных элементов формы на 100% от ширины родительского элемента */
+        padding: 8px; /* Задает внутренний отступ вокруг содержимого этих элементов формы */
+        margin-bottom: 10px; /* внешний отступ снизу каждого элемента формы для создания промежутка между элементами */
+        box-sizing: border-box;  /*Свойство box-sizing определяет, как CSS должен учитывать размеры элемента в модели блоков
+        Значение border-box указывает браузеру использовать контентную ширину и высоту элемента, 
+        включая отступы и границы, но не внешние отступы, чтобы определить размер элемента */
+    }
+    button {
+        background-color: #4CAF50; /*  цвет фона кнопки */
+    color: white; /*  цвет текста на кнопке */
+    padding: 10px 160px; /*  внутренний отступ внутри кнопки по вертикали и горизонтали */
+    border: none; /*  отсутствие границы у кнопки */
+    border-radius: 5px; /*  радиус скругления углов кнопки */
+    cursor: pointer; /*  курсор указателя при наведении на кнопку */
+    font-size: 18px;
+    }
+</style>
+</head>
+<body>
+    <h2 style="text-align: center;">Оформление заказа</h2> 
+    <form id="order-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="address">Адрес доставки:</label>
+        <textarea id="address" name="address" required></textarea>
+        <button type="submit">Завершить заказ</button> <!-- Этот элемент будет иметь внешний вид и стили, 
+        определенные в CSS, который был приведен ранее. 
+        Когда пользователь нажимает на эту кнопку, будет вызвана функция goToHome() -->
+    </form>
+    <script>
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Ваш заказ успешно оформлен!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

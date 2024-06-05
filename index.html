@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <style>
+         body {
+            font-size: 16px;
+        }
+        .container {
+            max-width: 35cm; 
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .center-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .phone-number {
+            color: green; /* Зеленый цвет для номера телефона */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px; /* Ширина мини-изображения логотипа */
+            height: auto; /* Автоматическое вычисление высоты изображения для сохранения пропорций */
+            margin-right: 20px; /* Отступ справа от мини-изображения */
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .company-name {
+            color: #a136a3; /* Изменяем цвет на розовый */
+            font-weight: bold;
+            border-bottom: 1px solid rgb(0, 255, 21); /* Зеленая линия под текстом */
+            margin-bottom: 5px; /* Отступ после зеленой линии */
+            font-weight: bold;
+        }
+
+        .logo p {
+            color: green;
+            font-size: 10px;
+            margin: -5px 0; /* Отрицательный верхний отступ для приближения к "ПЕРМФАРМАЦИЯ" */
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-left: 20px; /* Добавляем отступ слева */
+            background-color: #ccc; /* Цвет фона серый */
+            padding: 0 10px; /* Добавляем небольшие отступы внутри блока */
+            border-radius: 5px; /* Делаем закругленные края */
+        }
+
+        input[type="text"] { 
+            padding: 5px;
+            margin-right: 10px;
+            height: 30px;
+            width: 300px;
+            border: none; /* Убираем границу */
+            background: none; /* Убираем фон */
+}
+
+
+        .button {
+            background-color: green; /* цвет фона */  
+            color: #fff; /* цвет текста */  
+            padding: 6px 16px; /* Внутренние отступы кнопки */ 
+            border: none; /* Убирание границы */  
+            border-radius: 5px; /* скругление углов */ 
+            cursor: pointer; /* Изменение курсора при наведении */  
+        }
+
+        .info {
+            font-family: Arial, sans-serif;
+            color: #555;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info p {
+            margin-right: 10px;
+        }
+
+        .info span {
+            font-weight: bold;
+            color: green;
+        }
+
+        .cart-button {
+            display: flex; /* свойство CSS позволяет элементам находиться в одной строке и автоматически выстраиваться на основе доступного пространства */
+            height: 40px; /* устанавливает высоту элемента равной 40 пикселям */
+            align-items: center; /* центрирует элементы по вертикали в родительском элементе (если у него определен display: flex;) */
+            margin-left: 20px; /* устанавливает отступ слева от элемента в размере 20 пикселей */ 
+            border-radius: 15px; /* скругляет углы элемента, делая его края закругленными в радиусе 15 пикселей */ 
+        }
+
+        .cart-button img {
+            width: 30px; /* Устанавливает ширину изображения в 30 пикселей */
+            height: auto; /* Автоматически регулирует высоту изображения, чтобы оно подстраивалось пропорционально его ширине */
+            margin-right: 5px; /* Устанавливает отступ справа от изображения в размере 5 пикселей */
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-wrap: wrap;
+        }
+
+        .table-container {
+            margin: 10px; /* задает отступы вокруг элемента .table-container размером 10 пикселей. 
+            Это означает, что вокруг этого контейнера будет отступ равный 10 пикселям */
+            text-align: center; /* центрирует текст и любое встроенное содержимое внутри элемента .table-container. 
+            Все содержимое внутри этого контейнера будет выровнено по центру*/
+        }
+
+        table {
+            width: 250px;
+            height: 300px;
+            border-collapse: collapse;
+            border: 0px solid rgb(95, 82, 82); /* толщина табл. */
+        }
+
+        td {
+            text-align: center; /* задает выравнивание содержимого ячеек по центру. 
+            Текст и другие элементы внутри ячеек будут выровнены по центру относительно ячейки */
+            padding: 10px; /* определяет внутренний отступ вокруг содержимого внутри ячеек. 
+            В данном случае, внутренний отступ составляет 10 пикселей по всем четырем сторонам ячейки */
+            border: none; /* Этот стиль устанавливает, 
+            что у ячеек не будет никаких границ. Ячейки не будут иметь рамок */
+        }
+
+        img {
+            max-width: 200px; /* устанавливает максимальную ширину изображения в 200 пикселей */
+            max-height: 200px; /* устанавливает максимальную высоту изображения в 200 пикселей */
+        }
+
+        .price { /*селектор класса, который применяется ко всем элементам на веб-странице с классом price*/
+            padding-top: 4px; /*стиль устанавливает отступ сверху для элементов с классом .price, 
+            который равен 5 пикселям. Это будет создавать пустое пространство над содержимым элементов .price*/
+        }
+
+        .btn {
+            padding: 8px 12px; /*внутренний отступ размером 5 пикселей сверху и снизу, 
+            и 10 пикселей слева и справа от содержимого внутри текста*/
+            background-color: #4CAF50; /*цвет фона кнопки зеленый (#4CAF50)*/
+            color: white; /*белый цвет текста внутри кнопки*/
+            border: none; /*Убирает границу у элемента */
+            border-radius: 15px; /*Округляет углы кнопки, делая ее закругленным 
+            со скруглением в 15 пикселей */
+            text-align: center; /*Центрирует текст внутри кнопки по горизонтали */
+            text-decoration: none; /*стандартное подчеркивание у текста-ссылки 
+            (text-decoration: none обычно используется с 'a' тегами) */
+            display: inline-block;  /* Устанавливает кнопку как "inline-block", 
+            что позволяет ему занимать только необходимое горизонтальное пространство и иметь блочные свойства */
+            font-size: 14px; /*размер шрифта 12 пикселей */
+            margin-top: 5px; /*отступ сверху кнопки размером 5 пикселей*/
+        }/* Ваши стили CSS здесь */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"> 
+                <img src="mini-image.jpg" alt="Мини изображение"> 
+                <div class="company-info"> 
+                    <span class="company-name">ПЕРМФАРМАЦИЯ</span> 
+                    <p>аптечная сеть</p> 
+                </div>
+            </div>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Поиск...">
+                <button class="button">Найти</button>
+            </div>
+            <div class="info-block"> <!-- По вопросам и номер телефона после блока поиска -->
+                <span>По вопросам:</span>
+                <div class="phone-info">
+                    <span class="phone-number">8-800-300-1000</span>
+                </div>
+            </div>
+            <button class="cart-button" onclick="goToCart()"> 
+                <img src="cart-icon.jpg" alt="Изображение корзины">
+                Корзина
+            </button>
+        </div>
+    </div>
+
+    <div class="center"> <!--Контейнер, который центрирует содержимое в нем -->
+        <div class="table-container"> <!--Блок, в котором находится таблица с товарами. Служит оберткой для таблицы-->
+            <table> <!-- Начало таблицы -->
+                <tr> <!-- Строка таблицы --> 
+                    <td> <!-- Ячейка таблицы, содержащая информацию о продукте --> 
+                        <img src="ФУРАЦЕЛИН АВЕКСИМА.jpg" alt="Image 1"><br> <!-- Изображение товара с указанным путем к файлу -->
+                        ФУРАЦИЛИН АВЕКСИМА <!-- Текст, описывающий товар -->
+                        <div class="price">133.₽</div> <!-- Блок с классом "price", 
+                            содержащий цену товара (133.₽ в данном случае) -->
+                        <button class="btn" onclick="checkout()">Оформить заказ</button> <!-- Кнопка для оформления заказа с классом "btn" и функцией "checkout()" -->
+                    </td> 
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="аллергостин.jpg" alt="Image 2"><br>
+                        АЛЛЕРГОСТИН
+                        <div class="price">230.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="немозол.jpg" alt="Image 3"><br>
+                        НЕМОЗОЛ
+                        <div class="price">1050.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="АСПИРИН.jpg" alt="Image 4"><br>
+                        АСПИРИН
+                        <div class="price">500.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="УГОЛЬ АКТИВИРОВАННЫЙ.jpg" alt="Image 5"><br>
+                        УГОЛЬ АКТИВИРОВАННЫЙ
+                        <div class="price">90.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="ПАРАЦЕТАМОЛ.jpg" alt="Image 6"><br>
+                        ПАРАЦЕТАМОЛ
+                        <div class="price">80.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="КЕТАНОВ.jpg" alt="Image 7"><br>
+                        КЕТАНОВ
+                        <div class="price">120.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="НО ШПА.jpg" alt="Image 8"><br>
+                        НО ШПА
+                        <div class="price">360.₽</div>
+                        <button class="btn" onclick="checkout()">Оформить заказ</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <td>
+                    <img src="ЦИТРАМОН П.jpg" alt="Image 7"><br>
+                    ЦИТРАМОН П
+                    <div class="price">80.₽</div>
+                    <button class="btn" onclick="checkout()">Оформить заказ</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+<script>
+function checkout() {
+window.location.href = "checkout.html"; 
+         
+}
+function goToCart() { 
+ window.location.href = "cart.html"; 
+}
+    </script>
+</body>
+</html>

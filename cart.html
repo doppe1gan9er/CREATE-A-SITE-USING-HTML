@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="cart-icon.jpg">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .empty-cart {
+            font-size: 35px; /* устанавливает размер шрифта для текста внутри элемента с классом 
+            .empty-cart на 30 пикселей. Это делает текст более крупным и заметным на странице */
+            margin-bottom: 10px; /*задает отступ вниз от элемента с классом .empty-cart */
+        }
+
+        .back-btn {
+            padding: 20px 40px; /* внутренний отступ в 20 пикселей сверху и снизу, 
+            а также 40 пикселей слева и справа кнопки. Это делает кнопку более "пухлой" */
+            background-color: #4CAF50; /* цвет фона кнопки в зеленый (#4CAF50) */
+            color: white; /* цвет текста кнопки в белый */
+            border: none; /* Убирает границы кнопки */
+            border-radius: 15px; /* Устанавливает радиус скругления углов кнопки на 15 пикселей, 
+            что делает ее форму более закругленной */
+            cursor: pointer;  /* Устанавливает курсор мыши при наведении на кнопку на указатель, 
+            что указывает на то, что элемент является интерактивным */
+            font-size: 18px; /* Устанавливает размер шрифта текста на кнопке 15 пикселей */
+        }
+    </style>
+</head>
+<body>
+    <div class="empty-cart">Корзина пуста</div> <!-- использует класс .empty-cart для стилизации текста --> 
+    <button class="back-btn" onclick="goToHome()">Вернуться на главную</button>  <!-- Этот элемент будет иметь внешний вид и стили, 
+    определенные в CSS, который был приведен ранее. Когда пользователь нажимает на эту кнопку, будет вызвана функция goToHome() -->
+
+    <script>
+        function goToHome() {
+            window.location.href = "index.html"; /* функция goToHome() использует свойство window.location.href, 
+            чтобы перенаправить пользователя на страницу "index.html" при нажатии на кнопку */
+        }
+    </script>
+</body>
+</html>
